@@ -1,4 +1,4 @@
-package com.springprofissional.desafiocrud.controllers;
+package com.springprofissional.desafiocrud.controllers.handlers;
 
 import com.springprofissional.desafiocrud.dto.CustomError;
 import com.springprofissional.desafiocrud.dto.ValidationError;

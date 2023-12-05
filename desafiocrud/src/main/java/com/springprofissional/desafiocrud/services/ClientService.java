@@ -3,8 +3,10 @@ package com.springprofissional.desafiocrud.services;
 import com.springprofissional.desafiocrud.dto.ClientDTO;
 import com.springprofissional.desafiocrud.entities.Client;
 import com.springprofissional.desafiocrud.repositories.ClientRepository;
+import com.springprofissional.desafiocrud.services.exceptions.DatabaseException;
 import com.springprofissional.desafiocrud.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -49,7 +51,15 @@ public class ClientService {
 
     @Transactional(propagation = Propagation.SUPPORTS)
     public void delete(Long id) {
-        repository.deleteById(id);
+        if (!repository.existsById(id)) {
+            throw new ResourceNotFoundException("Recurso não encontrado");
+        }
+        try {
+            repository.deleteById(id);
+        }
+        catch (DataIntegrityViolationException e) {
+            throw new DatabaseException("Falha de integridade referencial");
+        }
     }
 
     public void CopyDtoEntity(ClientDTO dto,Client entity){
