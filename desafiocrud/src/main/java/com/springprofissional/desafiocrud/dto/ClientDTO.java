@@ -1,16 +1,27 @@
 package com.springprofissional.desafiocrud.dto;
 
 import com.springprofissional.desafiocrud.entities.Client;
+import jakarta.validation.constraints.*;
 
 import java.time.LocalDate;
 
 public class ClientDTO {
 
     private Long id;
+    @Size(min = 3, max = 80, message = "Name must be 3 to 80 characters long.")
+    @NotBlank(message = "name field cannot be empty.")
     private String name;
+
+    @NotBlank(message = "cpf field cannot be empty.")
+    @Positive(message = "cpf cannot be negative")
     private String cpf;
+    @Positive(message = "Income cannot be negative")
+    @NotBlank(message = "Income field cannot be empty." )
     private Double income;
+    @Past(message = "Birth Date cannot be present")
     private LocalDate birthDate;
+
+    @PositiveOrZero(message = "Must be a positive number or 0.")
     private Integer children;
 
     public ClientDTO(Long id, String name, String cpf, Double income, LocalDate birthDate, Integer children) {
