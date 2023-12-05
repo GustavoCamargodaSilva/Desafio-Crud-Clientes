@@ -1,1 +1,5 @@
-INSERT INTO tb_client(id,name,cpf,income,birth_date,children) VALUES (1,'Gustavo','08446872943',20,'2022-07-25',10)
+INSERT INTO tb_client(id,name,cpf,income,birth_date,children) VALUES (1,'Gustavo','08446872943',4.500,'1997-08-02',1)
+INSERT INTO tb_client(id,name,cpf,income,birth_date,children) VALUES (2,'Ana','264.494.829-07',2.000,'2000-08-31',2)
+INSERT INTO tb_client(id,name,cpf,income,birth_date,children) VALUES (3,'Livia','989.508.469-26',1.100,'2016-08-11',0)
+INSERT INTO tb_client(id,name,cpf,income,birth_date,children) VALUES (4,'Rosangela','606.015.079-91',10.000,'1982-04-01',3)
+INSERT INTO tb_client(id,name,cpf,income,birth_date,children) VALUES (5,'Valderes','515.078.789-233',5.000,'1985-09-30',2)

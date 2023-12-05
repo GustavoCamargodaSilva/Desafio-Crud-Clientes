@@ -60,6 +60,4 @@ public class ClientService {
         entity.setBirthDate(dto.getBirthDate());
     }
 
-
-
 }
