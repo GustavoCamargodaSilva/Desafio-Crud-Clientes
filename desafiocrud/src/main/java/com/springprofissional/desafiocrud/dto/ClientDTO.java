@@ -18,7 +18,7 @@ public class ClientDTO {
     @Positive(message = "Income cannot be negative")
     @NotBlank(message = "Income field cannot be empty." )
     private Double income;
-    @Past(message = "Birth Date cannot be present")
+    @Past(message = "Birth Date cannot be present ")
     private LocalDate birthDate;
 
     @PositiveOrZero(message = "Must be a positive number or 0.")
